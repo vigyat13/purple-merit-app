@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:5000/api', // Must match Flask port
+
+  baseURL: 'https://purple-merit-app.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-// Add token to every request automatically
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
